@@ -3,11 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      <View style={styles.container}>
+        <LittleLemonHeader />
+      </View>
+      <View style={{ backgroundColor: "#495E57" }}>
+        <LittleLemonFooter />
+      </View>
+    </>
+  )
 }
 
 const styles = StyleSheet.create({
