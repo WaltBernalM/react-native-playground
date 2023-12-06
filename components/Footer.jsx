@@ -13,10 +13,10 @@ export default function Footer() {
           fontSize: 18,
           color: "black",
           textAlign: "center",
-          paddingVertical: 10
+          paddingVertical: 10,
         }}
       >
-        All rights reserved by Little Lemon, 2022
+        All rights reserved by Little Lemon, 2022{' '}
       </Text>
     </View>
   )

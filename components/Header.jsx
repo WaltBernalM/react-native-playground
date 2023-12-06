@@ -2,13 +2,14 @@ import { View, Text } from "react-native"
 
 export default function Header() {
   return (
-    <View style={{ flex: 0.15, backgroundColor: "#F4CE14" }}>
+    <View style={{ backgroundColor: "#F4CE14" }}>
       <Text
         style={{
-          padding: 40,
+          padding: 20,
           fontSize: 30,
           color: "black",
           textAlign: "center",
+          marginTop: 30
         }}
       >
         Little Lemon
