@@ -1,12 +1,12 @@
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
 export default function WelcomeScreen() {
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView indicatorStyle={"white"} style={{ flex: 1 }}>
       <Text
         style={{
           padding: 40,
-          fontSize: 30,
+          fontSize: 50,
           color: "#EDEFEE",
           textAlign: "center",
         }}
@@ -15,7 +15,7 @@ export default function WelcomeScreen() {
       </Text>
       <Text
         style={{
-          fontSize: 24,
+          fontSize: 38,
           padding: 20,
           marginVertical: 8,
           color: "#EDEFEE",
@@ -26,6 +26,6 @@ export default function WelcomeScreen() {
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
-    </View>
+    </ScrollView>
   )
 }
