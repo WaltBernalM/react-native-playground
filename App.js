@@ -15,7 +15,7 @@ export default function App() {
       >
         <Header />
         <WelcomeScreen />
-        {/* <MenuItems /> */}
+        <MenuItems />
       </View>
       <View style={{ backgroundColor: "#495E57" }}>
         <Footer />
