@@ -50,7 +50,8 @@ export default function MenuItems() {
         renderItem={renderItem}
         ItemSeparatorComponent={Separator}
         ListHeaderComponent={Header}
-        ListFooterComponent={Footer}></FlatList>
+        ListFooterComponent={Footer}
+      />
     </View>
   )
 }
