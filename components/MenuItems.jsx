@@ -24,6 +24,16 @@ const menuItemsToDisplay = [
   { name: "Panna Cotta", price: "$5.00", id: "21V" },
 ]
 
+const Separator = () => <View style={menuStyles.separator}></View>
+
+const Header = () => <Text style={menuStyles.headerText}>View Menu</Text>
+
+const Footer = () => (
+  <View style={menuStyles.innerContainer}>
+    <Text style={menuStyles.footerText}>Menu valid until December 2022</Text>
+  </View>
+)
+
 const Item = ({ name, price }) => (<View style={menuStyles.innerContainer}>
   <Text style={menuStyles.itemText}>{name}</Text>
   <Text style={menuStyles.itemText}>{price}</Text>
@@ -34,13 +44,15 @@ export default function MenuItems() {
 
   return (
     <View style={menuStyles.container}>
-      <Text style={menuStyles.headerText}>View Menu</Text>
       <FlatList
         data={menuItemsToDisplay}
         keyExtractor={(item) => item.id}
-        renderItem={renderItem}></FlatList>
+        renderItem={renderItem}
+        ItemSeparatorComponent={Separator}
+        ListHeaderComponent={Header}
+        ListFooterComponent={Footer}></FlatList>
     </View>
-  );
+  )
 }
 
 
@@ -65,5 +77,13 @@ const menuStyles = StyleSheet.create({
   itemText: {
     color: "#F4CE14",
     fontSize: 20,
+  },
+  separator: {
+    borderBottomWidth: 1,
+    borderColor: "#EDEFEE",
+  },
+  footerText: {
+    color: "white",
+    fontSize: 12
   },
 })
