@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WelcomeScreen from './components/WelcomeScreen';
 import MenuItems from './components/MenuItems';
+import Menu from './components/Menu';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
       >
         <Header />
         <WelcomeScreen />
-        <MenuItems />
+        {/* <MenuItems /> */}
+        <Menu/>
       </View>
       <View style={{ backgroundColor: "#495E57" }}>
         <Footer />
