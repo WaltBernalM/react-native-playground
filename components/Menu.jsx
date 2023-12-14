@@ -65,8 +65,12 @@ function Menu() {
   } 
 
   const renderSectionHeader = (sections) => {
-    const { section: {title}} = sections
-    return <Text style={menuStyles.sectionHeader}>{title}</Text>
+    const { section: { title } } = sections
+    return (
+      <View style={menuStyles.headerStyle}>
+        <Text style={menuStyles.sectionHeader}>{title}</Text>
+      </View>
+    )
   }
 
   return (
@@ -95,12 +99,11 @@ const menuStyles = StyleSheet.create({
     justifyContent: "space-between",
   },
   sectionHeader: {
-    backgroundColor: "#F4CE14",
-    color: "#333333",
+    color: "black",
     fontSize: 26,
     flexWrap: "wrap",
     textAlign: "center",
-    paddingVertical: 8
+    paddingVertical: 8,
   },
   itemText: {
     color: "#F4CE14",
@@ -115,6 +118,9 @@ const menuStyles = StyleSheet.create({
     fontSize: 20,
     flexWrap: "wrap",
     textAlign: "center",
+  },
+  headerStyle: {
+    backgroundColor: "#F4CE14",
   },
 })
 
