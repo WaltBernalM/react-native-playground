@@ -91,23 +91,24 @@ const menuStyles = StyleSheet.create({
     paddingHorizontal: 40,
     paddingVertical: 20,
     backgroundColor: "#333333",
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   sectionHeader: {
-    backgroundColor: "#fbdabb",
+    backgroundColor: "#F4CE14",
     color: "#333333",
-    fontSize: 34,
+    fontSize: 26,
     flexWrap: "wrap",
     textAlign: "center",
+    paddingVertical: 8
   },
   itemText: {
     color: "#F4CE14",
-    fontSize: 22,
+    fontSize: 18,
   },
   separator: {
     borderBottomWidth: 1,
-    borderColor: "#EDEFEE",
+    borderColor: "gray",
   },
   footerText: {
     color: "#EDEFEE",
