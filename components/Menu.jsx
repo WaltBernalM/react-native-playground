@@ -51,7 +51,8 @@ const Item = (props) => {
       <Text style={menuStyles.itemText}>{name}</Text>
       <Text style={menuStyles.itemText}>{price}</Text>
     </View>
-  )}
+  )
+}
 
 const Footer = () => <Text style={menuStyles.footerText}>Little Lemon 2022</Text>
 
