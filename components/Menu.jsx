@@ -45,7 +45,6 @@ const menuItems = [
 ]
 
 const Item = (props) => {
-  console.log('props: ', props)
   const { name, price } = props
   return (
     <View style={menuStyles.innerContainer}>
