@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import { Alert, ScrollView, StyleSheet, Text, TextInput } from "react-native";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('')
@@ -15,6 +15,7 @@ export default function LoginScreen() {
         onChange={setEmail}
         placeholder="email"
         keyboardType="email-address"
+        clearButtonMode="while-editing"
       />
       <TextInput
         style={styles.input}
@@ -23,6 +24,11 @@ export default function LoginScreen() {
         placeholder="password"
         keyboardType="default"
         secureTextEntry={true}
+        onBlur={() => {
+          if (password.length <= 5) {
+            return Alert.alert('Password is too short (at least 6 characters)')
+          }
+        }}
       />
     </ScrollView>
   )
