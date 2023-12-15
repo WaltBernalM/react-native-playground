@@ -54,7 +54,7 @@ const Item = (props) => {
   )
 }
 
-const Footer = () => <Text style={menuStyles.footerText}>Little Lemon 2022</Text>
+const Footer = () => <Text style={menuStyles.footerText}>Try everything!</Text>
 
 const Separator = () => <View style={menuStyles.separator}></View>
 
@@ -89,7 +89,7 @@ function Menu() {
 
 const menuStyles = StyleSheet.create({
   container: {
-    flex: 0.95,
+    flex: 1,
   },
   innerContainer: {
     paddingHorizontal: 40,
