@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 function FeedbackForm() {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [firstName, setFirstName] = useState(''), [lastName, setLastName] = useState('')
   const [message, setMessage] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
-      <ScrollView keyboardDismissMode={'on-drag'}>
+    // <KeyboardAvoidingView
+    //   style={styles.container}
+    //   behavior={Platform.OS === "ios" ? "padding" : "height"}
+    // >
+    <KeyboardAwareScrollView extraHeight={120} enableOnAndroid={true}>
+      <ScrollView style={styles.container} keyboardDismissMode={"on-drag"}>
         <Text style={styles.headingSection}>
           How was your visit at Little Lemon?
         </Text>
@@ -33,13 +35,23 @@ function FeedbackForm() {
           placeholder="Last Name"
         />
         <TextInput
+          style={styles.input}
+          value={phoneNumber}
+          onChange={setPhoneNumber}
+          placeholder="Phone Number"
+          keyboardType="phone-pad"
+        />
+        <TextInput
           style={styles.messageInput}
           value={message}
           onChange={setMessage}
           placeholder="Feedback Message"
+          multiline={true}
+          maxLength={250}
         />
       </ScrollView>
-    </KeyboardAvoidingView>
+    </KeyboardAwareScrollView>
+    // </KeyboardAvoidingView>
   )
 }
 
@@ -58,10 +70,11 @@ const styles = StyleSheet.create({
   infoSection: {
     fontSize: 24,
     padding: 20,
+    paddingTop: 0,
     marginVertical: 8,
     color: "#EDEFEE",
     textAlign: "center",
-    backgroundColor: "#495E57",
+    backgroundColor: "#495E57"
   },
   input: {
     height: 40,
