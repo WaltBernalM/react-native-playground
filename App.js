@@ -5,6 +5,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import MenuItems from './components/MenuItems';
 import Menu from './components/Menu';
 import FeedbackForm from './components/FeedbackForm';
+import LoginScreen from './components/LoginScreen';
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
         {/* <WelcomeScreen /> */}
         {/* <MenuItems /> */}
         {/* <Menu /> */}
-        <FeedbackForm/>
+        {/* <FeedbackForm/> */}
+        <LoginScreen/>
       </View>
       <View style={{ backgroundColor: "#495E57" }}>
         <Footer />
