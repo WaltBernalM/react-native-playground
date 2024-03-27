@@ -1,8 +1,10 @@
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, useColorScheme, View } from "react-native"
+import { Image, ScrollView, StyleSheet, Text, useColorScheme, useWindowDimensions, View } from "react-native"
 
 export default function WelcomeScreen() {
   const colorScheme = useColorScheme()
+  const window = useWindowDimensions()
+
   return (
     <ScrollView
       indicatorStyle={"white"}
@@ -18,6 +20,11 @@ export default function WelcomeScreen() {
         accessibilityLabel="Little Lemon Logo"
       />
       {/* <Text style={styles.heading}>Welcome to Little Lemon</Text> */}
+      <Text style={styles.regular}>Window Dimensions</Text>
+      <Text style={styles.regular}>Height: {window.height}</Text>
+      <Text style={styles.regular}>Width: {window.width}</Text>
+      <Text style={styles.regular}>Font scale: {window.fontScale}</Text>
+
       <Text style={styles.textBody}>
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment. We would love
