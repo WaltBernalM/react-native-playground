@@ -30,19 +30,28 @@ export default function WelcomeScreen() {
       <Text style={styles.regular}>Height: {window.height}</Text>
       <Text style={styles.regular}>Width: {window.width}</Text>
       <Text style={styles.regular}>Font scale: {window.fontScale}</Text>
-      
-      <Text>Orientation: { orientation }</Text>
+
+      <Text>Orientation: {orientation}</Text>
 
       <Text>Clipboard data: {value}</Text>
       <Button
-        title='Update clipboard'
+        title="Update clipboard"
         onPress={() => {
           setCounter(() => counter + 1)
-          onCopy('new value: ' + counter)
+          onCopy("new value: " + counter)
         }}
-      >Set clipboard</Button>
+      >
+        Set clipboard
+      </Button>
 
-      <Text style={styles.textBody}>
+      <Text
+        style={[
+          styles.textBody,
+          colorScheme === "light"
+            ? { color: "#333333" }
+            : { color: "#FFF" },
+        ]}
+      >
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
