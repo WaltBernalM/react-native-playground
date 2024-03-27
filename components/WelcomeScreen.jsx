@@ -1,16 +1,23 @@
-import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, useColorScheme, useWindowDimensions, View } from "react-native"
+import React, { useState } from 'react'
+import { Button, Image, ScrollView, StyleSheet, Text, useColorScheme, useWindowDimensions, View } from "react-native"
+import { useDeviceOrientation } from "@react-native-community/hooks"
+import { useClipboard } from "native-base" 
 
 export default function WelcomeScreen() {
   const colorScheme = useColorScheme()
   const window = useWindowDimensions()
+  const orientation = useDeviceOrientation()
+  const { value, onCopy } = useClipboard()
+  const [ counter, setCounter ] = useState(0)
 
   return (
     <ScrollView
       indicatorStyle={"white"}
       style={[
         styles.container,
-        colorScheme === 'light' ? { backgroundColor: '#FFF'} : { backgroundColor: '#333333' }
+        colorScheme === "light"
+          ? { backgroundColor: "#FFF" }
+          : { backgroundColor: "#333333" },
       ]}
     >
       <Image
@@ -19,11 +26,21 @@ export default function WelcomeScreen() {
         accessible={true}
         accessibilityLabel="Little Lemon Logo"
       />
-      {/* <Text style={styles.heading}>Welcome to Little Lemon</Text> */}
-      <Text style={styles.regular}>Window Dimensions</Text>
+      <Text style={styles.regular}>Color scheme: {colorScheme}</Text>
       <Text style={styles.regular}>Height: {window.height}</Text>
       <Text style={styles.regular}>Width: {window.width}</Text>
       <Text style={styles.regular}>Font scale: {window.fontScale}</Text>
+      
+      <Text>Orientation: { orientation }</Text>
+
+      <Text>Clipboard data: {value}</Text>
+      <Button
+        title='Update clipboard'
+        onPress={() => {
+          setCounter(() => counter + 1)
+          onCopy('new value: ' + counter)
+        }}
+      >Set clipboard</Button>
 
       <Text style={styles.textBody}>
         Little Lemon is a charming neighborhood bistro that serves simple food
