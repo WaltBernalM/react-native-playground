@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Image, ScrollView, StyleSheet, Text, useColorScheme, useWindowDimensions, View } from "react-native"
+import { AppState, Button, Image, ScrollView, StyleSheet, Text, useColorScheme, useWindowDimensions, View } from "react-native"
 import { useDeviceOrientation } from "@react-native-community/hooks"
-import { useClipboard } from "native-base" 
 
 export default function WelcomeScreen() {
+  const appState = AppState.currentState
   const colorScheme = useColorScheme()
   const window = useWindowDimensions()
   const orientation = useDeviceOrientation()
-  const { value, onCopy } = useClipboard()
   const [ counter, setCounter ] = useState(0)
 
   return (
@@ -26,23 +25,6 @@ export default function WelcomeScreen() {
         accessible={true}
         accessibilityLabel="Little Lemon Logo"
       />
-      <Text style={styles.regular}>Color scheme: {colorScheme}</Text>
-      <Text style={styles.regular}>Height: {window.height}</Text>
-      <Text style={styles.regular}>Width: {window.width}</Text>
-      <Text style={styles.regular}>Font scale: {window.fontScale}</Text>
-
-      <Text>Orientation: {orientation}</Text>
-
-      <Text>Clipboard data: {value}</Text>
-      <Button
-        title="Update clipboard"
-        onPress={() => {
-          setCounter(() => counter + 1)
-          onCopy("new value: " + counter)
-        }}
-      >
-        Set clipboard
-      </Button>
 
       <Text
         style={[
