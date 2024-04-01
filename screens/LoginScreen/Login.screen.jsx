@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Alert, Pressable, ScrollView, Text, TextInput } from "react-native";
 import LoginScreenStyles from "./Login.screen.styles";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [emailInput, setEmailInput] = useState('')
   const [passwordInput, setPasswordInput] = useState('')
   const [loggedIn, setLoggedIn] = useState(false)
@@ -17,6 +17,15 @@ export default function LoginScreen() {
     }
     loginBody.password = text
     setPasswordInput(text)
+  }
+
+  const doLogin = () => {
+    if (emailInput && emailInput.length <= 5 && passwordInput && passwordInput.length <= 5) { 
+      Alert.alert(`Please enter your email and pasword`)
+      return
+    }
+    setLoggedIn(true)
+    navigation.navigate("Welcome")
   }
 
   return (
@@ -54,13 +63,7 @@ export default function LoginScreen() {
           />
           <Pressable
             style={LoginScreenStyles.button}
-            onPress={() => {
-              if (emailInput && emailInput.length > 5 && passwordInput && passwordInput.length > 5) {
-                setLoggedIn(true)
-              } else {
-                Alert.alert(`Please enter your email and password`)
-              }
-            }}
+            onPress={() => doLogin()}
           >
             <Text style={LoginScreenStyles.buttonText}>log in</Text>
           </Pressable>

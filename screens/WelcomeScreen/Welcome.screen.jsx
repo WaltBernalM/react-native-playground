@@ -1,7 +1,6 @@
 import { Image, Pressable, Text, View } from "react-native"
 import littleLemonLogo from "../../img/littleLemonLogo.png"
 import WelcomeScreenStyles from "./Welcome.screen.styles"
-import { useNavigation } from '@react-navigation/native'
 
 export default function WelcomeScreen({ navigation }) {
   return (

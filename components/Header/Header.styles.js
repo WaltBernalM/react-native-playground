@@ -1,3 +1,5 @@
+import { StyleSheet } from "react-native";
+
 export default HeaderStyles = StyleSheet.create({
   viewStyle: {
     backgroundColor: "#F4CE14",

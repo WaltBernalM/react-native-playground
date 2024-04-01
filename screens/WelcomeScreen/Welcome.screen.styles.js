@@ -19,16 +19,20 @@ export default WelcomeScreenStyles = StyleSheet.create({
     marginTop: 25,
   },
   button: {
-    paddingTop: 10,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: "#FBDABB",
+    borderColor: "#EDEFEE",
+    borderWidth: 2,
+    borderRadius: 12,
   },
   buttonText: {
-    backgroundColor: "blue",
     textAlign: "center",
-    color: "white",
+    color: "rgb(57,76,69)",
+    fontWeight: "bold",
     padding: 10,
-    fontSize: 16
-  },
+    fontSize: 16,
+  }
 })
