@@ -1,8 +1,10 @@
 
+import { SectionList, Text, View } from "react-native"
 import MenuItem from "../../components/MenuItem/MenuItem.component"
 import MenuScreenStyles from "./Menu.screen.styles"
+import MenuItemsData from '../../data/MenuItems.data'
 
-export default function MenuScreen(menuItems) {
+export default function MenuScreen() {
   const renderItem = (sections) => {
     const {
       item: { name, price },
@@ -18,6 +20,12 @@ export default function MenuScreen(menuItems) {
       </View>
     )
   }
+
+  const Footer = () => <Text style={MenuScreenStyles.footerText}>Try them all!</Text>
+
+  const Separator = () => <View style={MenuScreenStyles.separator}></View>
+
+  const menuItems = MenuItemsData
 
   return (
     <View style={MenuScreenStyles.container}>

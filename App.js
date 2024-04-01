@@ -14,22 +14,28 @@ export default function App() {
       <Header />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Login"
-          screenOptions={{ headerStyle: { backgroundColor: "#FBDABB" } }}
+          initialRouteName="Welcome"
+          screenOptions={{
+            headerStyle: { backgroundColor: "#333333" },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            }
+          }}
         >
           <Stack.Screen
-            options={{ title: 'Login' }}
             name="Login"
+            options={{ title: "Login" }}
             component={LoginScreen}
           />
           <Stack.Screen
-            options={{ title: "Home" }}
             name="Welcome"
+            options={{ title: "Home" }}
             component={WelcomeScreen}
           />
           <Stack.Screen
-            options={{ title: "Menu" }}
             name="Menu"
+            options={{ title: "Menu" }}
             component={MenuScreen}
           />
         </Stack.Navigator>
